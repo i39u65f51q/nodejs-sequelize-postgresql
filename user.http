@@ -1,0 +1,27 @@
+### 取得全部使用者
+GET http://localhost:3300/user/getAll
+
+### 透過id取得使用者 
+@id = 1
+GET http://localhost:3300/user/get/{{id}}
+
+### 透過status取得使用者
+@status = pending
+GET http://localhost:3300/user/status/{{status}}
+
+### 更新使用者狀態(status)
+PATCH http://localhost:3300/user/update-status
+Content-Type: application/json
+
+{
+    "id": "1", 
+    "status": "pending"
+}
+
+###  新增使用者
+POST http://localhost:3300/user/create 
+Content-Type: application/json
+
+{
+    "name": "ben"
+}
